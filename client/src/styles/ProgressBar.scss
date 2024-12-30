@@ -1,0 +1,48 @@
+@use "Color";
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: Color.$first;
+  font-family: "SwedenSansBold", sans-serif;
+  width: 33%;
+  height: 100%;
+
+  .circle {
+    width: 6vh;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #555;
+    font-weight: bold;
+  }
+
+  &.active .circle {
+    background-color: Color.$first;
+    color: white;
+  }
+
+  &.completed .circle {
+    background-color: Color.$first;
+    color: white;
+  }
+
+  .label {
+    margin-top: 0.6rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}

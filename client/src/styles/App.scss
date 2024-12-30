@@ -1,0 +1,134 @@
+@use "Color";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+@font-face {
+  font-family: "SwedenSansBold";
+  src:
+    url("../assets/fonts/SwedenSansBold.woff2") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/SwedenSansBold.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "SwedenSans";
+  src:
+    url("../assets/fonts/SwedenSansBook.woff2") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/SwedenSansBook.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+// Reset base
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  font-family: "SwedenSans", sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: Color.$first;
+  border-radius: 1rem;
+  border: 0.2rem solid #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: Color.$first-hover;
+}
+
+button {
+  cursor: pointer;
+}
+
+.color-design_services {
+  color: gray;
+}
+
+.color-construction {
+  color: blueviolet;
+}
+
+.color-info {
+  color: rgb(66, 66, 246);
+}
+.color-settings {
+  color: red;
+}
+.color-find_in_page {
+  color: green;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+input,
+select,
+textarea {
+  border-radius: 0.5em;
+  border: none;
+}
+
+button {
+  font-family: "SwedenSansBold", sans-serif;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  transition: 350ms ease;
+
+  &.primary {
+    border: none;
+    color: Color.$third;
+    background-color: Color.$first;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    filter: brightness(0.8);
+  }
+}
+
+select {
+  cursor: pointer;
+}
+
+.form-error {
+  margin: 1rem 0;
+  color: #dc3545;
+  text-align: center;
+}
+
+.tooltip-error {
+  font-size: 1.1rem !important;
+  text-align: center;
+  background-color: #dc3545 !important;
+  opacity: 1 !important;
+}

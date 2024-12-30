@@ -1,0 +1,47 @@
+import { Dispatch, FC, SetStateAction } from "react";
+import { useAppContext } from "../context/appContext";
+import "../styles/Sidebar.scss";
+import { Document } from "../utils/interfaces";
+import CardDocument from "./CardDocument";
+
+interface SidebarProps {
+  document: Document | null;
+  documents: Document[];
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+  setDocument: (doc: Document | null) => void;
+  setDocuments: Dispatch<SetStateAction<Document[]>>;
+  toEditPos: () => void;
+}
+
+const Sidebar: FC<SidebarProps> = (props) => {
+  const { setVisualLinks, setShowTooltipUploads } = useAppContext();
+  return (
+    <>
+      <div className="container-btns">
+        {/* Close sidebar button */}
+        <button
+          className="btn-close-sidebar"
+          onClick={() => {
+            setShowTooltipUploads(false);
+            setVisualLinks(false);
+            props.setSidebarOpen(false);
+            setTimeout(() => props.setDocument(null), 300);
+          }}
+        >
+          <img className="btn-close-img" src="x.png" alt="Close" />
+        </button>
+      </div>
+
+      {/* Sidebar Content */}
+      <CardDocument
+        document={props.document}
+        toEditPos={() => props.toEditPos()}
+        showMapButton={false}
+        isDocSelected={true} // always true here
+        setMinimapCoord={null} // no need here
+      />
+    </>
+  );
+};
+
+export default Sidebar;

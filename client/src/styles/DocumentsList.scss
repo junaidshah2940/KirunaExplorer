@@ -1,0 +1,63 @@
+@use "Color";
+
+#document-list {
+  background: linear-gradient(#005293 85%, #fecb00);
+  height: 100vh;
+  overflow-y: hidden;
+
+  .overlay {
+    z-index: 2;
+  }
+
+  .doc-lists {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      position: relative;
+      height: 10%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+
+      .title {
+        font-family: "SwedenSansBold", sans-serif;
+        display: flex;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        width: 18vw;
+      }
+
+      #search-input-container {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.slider-container {
+  .card-container {
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    opacity: 0.5;
+    transform: scale(0.9);
+
+    &.selected {
+      opacity: 1;
+      transform: scale(1.0006);
+    }
+
+    .content {
+      margin: auto;
+    }
+  }
+}
+.searchbar-container:focus-within {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}

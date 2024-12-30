@@ -1,0 +1,65 @@
+@use "Color";
+
+.nav-header {
+  height: 10%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: Color.$first;
+  border-bottom: Color.$first-darker 1px solid;
+
+  .nav-title-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .brand {
+      font-family: "SwedenSansBold", sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      margin-right: 2%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  > :last-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user-name {
+    font-family: "SwedenSansBold", sans-serif;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 0.7rem 1.3rem;
+    font-family: "SwedenSansBold", sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    background-color: Color.$first;
+    border: 0.1rem solid white;
+    border-radius: 1rem;
+    transition: 300ms ease;
+
+    &:hover,
+    &.active {
+      background-color: white;
+      color: Color.$first;
+      border: 0.1rem solid Color.$first;
+    }
+  }
+
+  a.diagram {
+    @extend button;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,95 @@
+@use "Color";
+
+#diagram {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  font-family: "SwedenSansBold", sans-serif;
+  transition: width 0.3s linear;
+
+  &.with-sidebar {
+    width: 70%;
+  }
+
+  .time-axis {
+    flex: 1;
+    display: flex;
+    border-bottom: 4px solid Color.$first-hover;
+    background-color: Color.$first;
+    color: white;
+    .combine-axes {
+      flex: 1;
+    }
+    .time-cells-container {
+      flex: 9;
+    }
+  }
+
+  .scale-n-svg {
+    display: flex;
+    flex: 13;
+  }
+
+  .scale-types-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 4px solid Color.$first-hover;
+    background-color: Color.$first;
+    color: white;
+    font-size: 2.2ch;
+    text-align: center;
+  }
+
+  .scale-type {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid Color.$first-hover;
+  }
+
+  .architectural_scale {
+    flex: 3;
+  }
+
+  svg {
+    flex: 9;
+    width: 100%;
+    height: 100%;
+    border-right: 4px solid Color.$first-hover;
+    border-bottom: 4px solid Color.$first-hover;
+  }
+
+  g.documents {
+    stroke-width: 2;
+    stroke: black;
+    fill: white;
+  }
+
+  circle {
+    r: 1.5%;
+    transition: 350ms ease;
+    &:hover {
+      r: 2%;
+      cursor: pointer;
+    }
+  }
+
+  g.links {
+    line {
+      stroke: black;
+    }
+  }
+
+  .time-cells-container {
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 2rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
